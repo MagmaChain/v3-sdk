@@ -445,6 +445,7 @@ function getMagmaPoolAddress(_ref) {
     token1 = _ref.token1,
     fee = _ref.fee,
     factoryAddress = _ref.factoryAddress;
+  console.log("getMagmaPoolAddressgetMagmaPoolAddress");
   var data = keccak256(['bytes'], [defaultAbiCoder.encode(['address', 'address', 'uint24'], [token0, token1, fee])]);
   return utils.create2Address(factoryAddress, POOL_INIT_CODE_HASH, data, '0x');
 }
@@ -467,6 +468,7 @@ function computePoolAddress(_ref2) {
     token0 = _ref3[0],
     token1 = _ref3[1]; // does safety checks
   var magmaFactoryAddress = V3_CORE_FACTORY_ADDRESSES[ChainId.MAGMA_TESTNET];
+  console.log("getMagmaPoolAddressgetMagmaPoolAddresspapap", magmaFactoryAddress === factoryAddress);
   if (magmaFactoryAddress === factoryAddress) {
     return getMagmaPoolAddress({
       token0: token0.address,

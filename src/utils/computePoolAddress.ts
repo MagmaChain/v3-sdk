@@ -17,6 +17,8 @@ function getMagmaPoolAddress({
   fee:FeeAmount,
   factoryAddress:string
 }){
+
+  console.log("getMagmaPoolAddressgetMagmaPoolAddress")
   const data = keccak256(
     ['bytes'],
     [defaultAbiCoder.encode(['address', 'address', 'uint24'], [token0, token1, fee])]
@@ -49,6 +51,9 @@ export function computePoolAddress({
   const [token0, token1] = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA] // does safety checks
 
   const magmaFactoryAddress = V3_CORE_FACTORY_ADDRESSES[ChainId.MAGMA_TESTNET]
+
+  console.log("getMagmaPoolAddressgetMagmaPoolAddresspapap",magmaFactoryAddress === factoryAddress)
+
   if(magmaFactoryAddress === factoryAddress){
     return getMagmaPoolAddress({
       token0:token0.address,
