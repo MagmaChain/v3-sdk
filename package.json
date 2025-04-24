@@ -1,0 +1,58 @@
+{
+  "name": "@uniswap/v3-sdk",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "3.11.0",
+  "description": "⚒️ An SDK for building applications on top of Uniswap V3",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/Uniswap/uniswap-v3-sdk.git",
+  "keywords": [
+    "uniswap",
+    "ethereum"
+  ],
+  "module": "dist/v3-sdk.esm.js",
+  "scripts": {
+    "build": "tsdx build",
+    "start": "tsdx watch",
+    "test": "tsdx test",
+    "prepublishOnly": "tsdx build"
+  },
+  "dependencies": {
+    "@ethersproject/abi": "^5.0.12",
+    "@ethersproject/solidity": "^5.0.9",
+    "@uniswap/sdk-core": "https://github.com/MagmaChain/uniswap-sdk-core.git",
+    "@uniswap/swap-router-contracts": "^1.2.1",
+    "@uniswap/v3-periphery": "^1.1.1",
+    "@uniswap/v3-staker": "1.0.0",
+    "ethers": "5",
+    "tiny-invariant": "^1.1.0",
+    "tiny-warning": "^1.0.3",
+    "zksync-web3": "^0.17.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "@uniswap/v3-core": "1.0.0",
+    "tsdx": "^0.14.1"
+  },
+  "resolutions": {
+    "regenerator-runtime": "^0.14.1"
+  },
+  "resolutionsComments": {
+    "regenerator-runtime": "Fixes https://github.com/facebook/regenerator/pull/480. It can be removed when `tsdx` updates their dependencies."
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true
+  },
+  "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538"
+}
